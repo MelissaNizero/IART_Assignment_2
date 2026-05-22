@@ -14,5 +14,13 @@
     "email": "ana@email.com",
     "pin": "111222",
     "created_at": "2026-05-22T22:51:01"
+  },
+  {
+    "employee_id": "SF03",
+    "first_name": "Samara",
+    "last_name": "Fernandes",
+    "email": "damourasamara@email.com",
+    "pin": "200308",
+    "created_at": "2026-05-22T23:04:39"
   }
 ]

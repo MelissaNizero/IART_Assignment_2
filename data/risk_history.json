@@ -50,5 +50,57 @@
       "self_reported_stress": 3,
       "motivation_level": 2
     }
+  },
+  {
+    "timestamp": "2026-05-22T23:06:30",
+    "employee_id": "SF03",
+    "employee_name": "Samara Fernandes",
+    "age": 22,
+    "department": "HR",
+    "role": "Mid",
+    "risk": "High",
+    "probabilities": {
+      "Low": 0.0,
+      "Medium": 0.0135,
+      "High": 0.9865
+    },
+    "inputs": {
+      "department": "HR",
+      "role": "Mid",
+      "seniority_years": 3,
+      "total_weekly_hours": 45,
+      "overtime_hours": 5,
+      "daily_meeting_volume": 5,
+      "days_since_last_vacation": 365,
+      "sick_leave_days_6m": 0,
+      "self_reported_stress": 4,
+      "motivation_level": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-22T23:15:41",
+    "employee_id": "SF03",
+    "employee_name": "Samara Fernandes",
+    "age": 22,
+    "department": "Sales",
+    "role": "Junior",
+    "risk": "Low",
+    "probabilities": {
+      "Low": 0.9939,
+      "Medium": 0.0061,
+      "High": 0.0
+    },
+    "inputs": {
+      "department": "Sales",
+      "role": "Junior",
+      "seniority_years": 0.9,
+      "total_weekly_hours": 42,
+      "overtime_hours": 2,
+      "daily_meeting_volume": 3.9,
+      "days_since_last_vacation": 60,
+      "sick_leave_days_6m": 1,
+      "self_reported_stress": 2,
+      "motivation_level": 3
+    }
   }
 ]
