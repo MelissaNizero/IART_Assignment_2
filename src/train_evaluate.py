@@ -16,7 +16,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.svm import SVC
 
-from generate_dataset import DATASET_PATH, generate_dataset
+try:
+    from .generate_dataset import DATASET_PATH, generate_dataset
+except ImportError:
+    from generate_dataset import DATASET_PATH, generate_dataset
 
 
 RANDOM_STATE = 42

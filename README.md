@@ -40,6 +40,7 @@ Distribuicao gerada da variavel-alvo:
 - Linguagem: Python
 - Bibliotecas: pandas, scikit-learn, matplotlib e seaborn
 - Suporte adicional: python-pptx para gerar uma copia preenchida da apresentacao
+- Web app: servidor HTTP simples em Python para demonstrar a previsao do modelo
 - Divisao dos dados: 80% treino / 20% teste
 - Estrategia: Hold-out com `random_state=42` e estratificacao pela variavel-alvo
 - Modelos comparados:
@@ -74,20 +75,38 @@ python -m pip install -r requirements.txt
 Gerar o dataset:
 
 ```bash
-python src/generate_dataset.py
+python main.py generate
 ```
 
 Treinar e avaliar os modelos:
 
 ```bash
-python src/train_evaluate.py
+python main.py train
 ```
 
 Atualizar a apresentacao a partir do template em `Downloads`:
 
 ```bash
-python src/update_presentation.py
+python main.py presentation
 ```
+
+Executar a web app:
+
+```bash
+python main.py app
+```
+
+Depois abrir no browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+Na interface e possivel inserir dados do trabalhador, incluindo nome, idade,
+departamento, cargo, carga horaria, horas extra, ferias, baixas, stress e
+motivacao. Depois da previsao, a pagina gera um relatorio com o risco previsto,
+probabilidades do modelo e sugestoes para os niveis Low, Medium e High. O botao
+`Print report` abre a impressao do relatorio.
 
 ## Estrutura
 
@@ -105,9 +124,12 @@ python src/update_presentation.py
 |       |-- random_forest_confusion_matrix.png
 |       `-- svm_confusion_matrix.png
 |-- src/
+|   |-- __init__.py
 |   |-- generate_dataset.py
 |   |-- train_evaluate.py
-|   `-- update_presentation.py
+|   |-- update_presentation.py
+|   `-- web_app.py
+|-- main.py
 |-- docs/
 |   `-- slide8_results.md
 |-- presentation/
