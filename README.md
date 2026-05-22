@@ -1,6 +1,6 @@
 ﻿# Employee Burnout Risk Prediction
 
-Projeto de Machine Learning para prever o risco de burnout de colaboradores em tres classes: `Low`, `Medium` e `High`. O foco do trabalho e o modelo preditivo e a sua avaliacao empirica, sem desenvolvimento de uma aplicacao ou interface.
+Projeto de Machine Learning para prever o risco de burnout de colaboradores em tres classes: `Low`, `Medium` e `High`. O foco principal e o modelo preditivo e a sua avaliacao empirica; a web app serve para demonstrar a aplicacao pratica do modelo, como pedido no assignment.
 
 ## Objetivo
 
@@ -8,14 +8,16 @@ O objetivo e detetar sinais precoces de exaustao profissional atraves de dados d
 
 ## Dataset
 
-Foi gerado um dataset sintetico com 1000 colaboradores. A geracao inclui correlacoes estatisticas plausiveis:
+Foi gerado um dataset sintetico com 1000 colaboradores. Como nao existem dados
+reais neste POC, a variavel-alvo foi criada com base num score latente de risco.
+Esse score introduz associacoes estatisticas plausiveis, sem afirmar causalidade:
 
-- mais horas extraordinarias aumentam o risco;
-- muitos dias desde as ultimas ferias aumentam o risco;
-- maior volume de reunioes aumenta o risco;
-- stress auto-reportado alto aumenta o risco;
-- motivacao baixa aumenta o risco;
-- faltas/baixas recentes contribuem para maior risco.
+- mais horas extraordinarias estao associadas a maior risco;
+- muitos dias desde as ultimas ferias estao associados a maior risco;
+- maior volume de reunioes esta associado a maior risco;
+- stress auto-reportado alto esta associado a maior risco;
+- motivacao baixa esta associada a maior risco;
+- faltas/baixas recentes contribuem para o score de risco.
 
 Distribuicao gerada da variavel-alvo:
 
@@ -64,6 +66,9 @@ Resultados no conjunto de teste com 200 registos:
 
 O melhor modelo foi a **Logistic Regression**, com F1 macro de aproximadamente 0.854. O resultado indica que, neste dataset sintetico, a fronteira entre classes e suficientemente estruturada para um modelo linear capturar bem os padroes principais. A classe `Medium` e a mais dificil, porque representa a zona de transicao entre baixo e alto risco.
 
+Na web app, os tres algoritmos sao avaliados no arranque com a mesma metodologia
+Hold-out, e o modelo com melhor F1 macro e selecionado para gerar as previsoes.
+
 ## Como executar
 
 Instalar dependencias:
@@ -102,18 +107,30 @@ Depois abrir no browser:
 http://127.0.0.1:8000
 ```
 
-Na interface e possivel inserir dados do trabalhador, incluindo nome, idade,
-departamento, cargo, carga horaria, horas extra, ferias, baixas, stress e
-motivacao. Depois da previsao, a pagina gera um relatorio com o risco previsto,
-probabilidades do modelo e sugestoes para os niveis Low, Medium e High. O botao
-`Print report` abre a impressao do relatorio.
+Na interface, o trabalhador comeca por fazer registo com primeiro nome, ultimo
+nome, email e PIN de seis digitos. A app gera automaticamente um `Employee ID`
+com as iniciais e o numero do cliente, por exemplo `JB01` para Joao Barbosa se
+for o primeiro registo.
+
+Depois do login com `Employee ID` e PIN, e possivel inserir os dados necessarios
+para prever o risco de burnout: idade, departamento, cargo, carga horaria, horas
+extra, ferias, baixas, stress e motivacao. Depois da previsao, a pagina gera um
+relatorio com o risco previsto, probabilidades do modelo e sugestoes para os
+niveis Low, Medium e High. O botao `Print report` abre a impressao do relatorio.
+
+Os registos ficam guardados em `data/users.json` e cada avaliacao fica guardada
+em `data/risk_history.json`. No canto superior direito da app existe uma lupa que
+permite pesquisar historicos por `Employee ID` e acompanhar se a tendencia esta a
+melhorar, piorar ou permanecer estavel.
 
 ## Estrutura
 
 ```text
 .
 |-- data/
-|   `-- employee_burnout_synthetic.csv
+|   |-- employee_burnout_synthetic.csv
+|   |-- users.json
+|   `-- risk_history.json
 |-- results/
 |   |-- classification_reports.txt
 |   |-- dataset_summary.csv

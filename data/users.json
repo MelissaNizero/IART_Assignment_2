@@ -1,0 +1,18 @@
+[
+  {
+    "employee_id": "MN01",
+    "first_name": "Melissa",
+    "last_name": "Nizero",
+    "email": "melissa@email.com",
+    "pin": "123456",
+    "created_at": "2026-05-22T22:36:09"
+  },
+  {
+    "employee_id": "AC02",
+    "first_name": "Ana",
+    "last_name": "Castro",
+    "email": "ana@email.com",
+    "pin": "111222",
+    "created_at": "2026-05-22T22:51:01"
+  }
+]

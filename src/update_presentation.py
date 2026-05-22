@@ -7,7 +7,10 @@ from pptx.util import Inches, Pt
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_TEMPLATE = Path.home() / "Downloads" / "P2-template (5).pptx"
+TEMPLATE_CANDIDATES = [
+    Path.home() / "Downloads" / "P2-template (6).pptx",
+    Path.home() / "Downloads" / "P2-template (5).pptx",
+]
 OUTPUT_DIR = PROJECT_ROOT / "presentation"
 OUTPUT_PATH = OUTPUT_DIR / "Employee_Burnout_Risk_Prediction.pptx"
 COMPARISON_FIGURE = PROJECT_ROOT / "results" / "figures" / "model_comparison.png"
@@ -102,11 +105,15 @@ def add_comparison_chart(slide):
 
 
 def main():
-    if not DEFAULT_TEMPLATE.exists():
-        raise FileNotFoundError(f"Template not found: {DEFAULT_TEMPLATE}")
+    template_path = next(
+        (candidate for candidate in TEMPLATE_CANDIDATES if candidate.exists()),
+        None,
+    )
+    if template_path is None:
+        raise FileNotFoundError("Template not found in Downloads.")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    presentation = Presentation(str(DEFAULT_TEMPLATE))
+    presentation = Presentation(str(template_path))
     slide8 = presentation.slides[7]
 
     replace_slide8_content(slide8)

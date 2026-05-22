@@ -1,0 +1,54 @@
+[
+  {
+    "timestamp": "2026-05-22T22:37:30",
+    "employee_id": "MN01",
+    "employee_name": "Melissa Nizero",
+    "age": 22,
+    "department": "IT",
+    "role": "Junior",
+    "risk": "High",
+    "probabilities": {
+      "Low": 0.0,
+      "Medium": 0.006,
+      "High": 0.994
+    },
+    "inputs": {
+      "department": "IT",
+      "role": "Junior",
+      "seniority_years": 4,
+      "total_weekly_hours": 50,
+      "overtime_hours": 9.9,
+      "daily_meeting_volume": 4.9,
+      "days_since_last_vacation": 120,
+      "sick_leave_days_6m": 6,
+      "self_reported_stress": 4,
+      "motivation_level": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-22T22:52:14",
+    "employee_id": "AC02",
+    "employee_name": "Ana Castro",
+    "age": 20,
+    "department": "Sales",
+    "role": "Junior",
+    "risk": "Medium",
+    "probabilities": {
+      "Low": 0.2497,
+      "Medium": 0.7238,
+      "High": 0.0265
+    },
+    "inputs": {
+      "department": "Sales",
+      "role": "Junior",
+      "seniority_years": 2,
+      "total_weekly_hours": 55,
+      "overtime_hours": 15,
+      "daily_meeting_volume": 3,
+      "days_since_last_vacation": 30,
+      "sick_leave_days_6m": 0,
+      "self_reported_stress": 3,
+      "motivation_level": 2
+    }
+  }
+]
