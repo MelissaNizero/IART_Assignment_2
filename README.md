@@ -1,6 +1,6 @@
 ﻿# Employee Burnout Risk Prediction
 
-Projeto de Machine Learning para prever o risco de burnout de colaboradores em tres classes: `Low`, `Medium` e `High`. O foco do trabalho e o modelo preditivo e a sua avaliacao empirica, sem desenvolvimento de uma aplicacao ou interface.
+Projeto de Machine Learning para prever o risco de burnout de colaboradores em tres classes: `Low`, `Medium` e `High`. O foco do trabalho e o modelo preditivo e a sua avaliacao empirica, sem desenvolvimento de uma aplicação ou interface.
 
 ## Objetivo
 
